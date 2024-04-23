@@ -27,7 +27,7 @@ export class TaskDto {
   @IsString()
   @MinLength(3)
   @MaxLength(512)
-  descripiton: string;
+  description: string;
 
   @IsEnum(TaskStatusEnum)
   @IsOptional()
@@ -40,4 +40,9 @@ export class TaskDto {
 export interface FindAllParameters {
   title: string;
   status: string;
+}
+
+export class TaskRouteParameters {
+  @IsUUID()
+  id: string;
 }
